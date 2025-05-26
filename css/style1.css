@@ -1,0 +1,278 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: url("../images/bg_about.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #2C3930;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+header {
+  background-color: #2C3930;
+  color: #DCD7C9;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title-box {
+  display: inline-block;
+  background: #E8E4C9;
+  padding: 8px 20px;
+  color: #2C3930;
+  font-weight: bold;
+  border-radius: 10px;
+  font-size: 40px;
+}
+
+main {
+  flex-grow: 1; 
+  padding: 20px;
+}
+
+.main-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px;
+  background-color: #3F4F44;
+  color: white;
+  border-radius: 15px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 1000px;
+  gap: 20px;
+}
+
+.author-image img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 4px solid #E8E4C9;
+  transition: transform 0.3s ease-in-out;
+}
+
+.author-image img:hover {
+  transform: scale(1.1);
+}
+
+.author-info {
+  flex: 1;
+  max-width: 500px;
+  text-align: left;
+  font-size: 25px;
+  line-height: 1.6;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 25px;
+}
+
+.contact-item img {
+  width: 50px;
+  height: 50px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.social-icons a img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.about-me {
+  background: #3F4F44;
+  padding: 20px;
+  margin: 20px auto;
+  width: 60%;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px; 
+  background-color: transparent; 
+}
+
+
+.image-box {
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.image-box img {
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  border: 3px solid #E8E4C9;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-box:hover {
+  transform: scale(1.05);
+}
+
+.image-box img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+footer {
+  background-color: #2C3930;
+  color: #DCD7C9;
+  padding: 15px;
+  margin-top: auto; 
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .title-box {
+    font-size: 28px;
+    padding: 10px;
+  }
+
+  .profile {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .author-image img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .author-info {
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .about-me {
+    width: 90%;
+    font-size: 18px;
+  }
+
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-box img {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .social-icons {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .social-icons a img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .author-info {
+    font-size: 18px;
+  }
+
+  .about-me {
+    font-size: 16px;
+  }
+
+  .title-box {
+    font-size: 24px;
+  }
+}
+
+.back-home-btn {
+  margin-top: 20px;
+}
+
+.back-home-btn button {
+  background-color: #3F4F44;
+  color: #E8E4C9;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-home-btn button:hover {
+  background-color: #2C3930;
+}
