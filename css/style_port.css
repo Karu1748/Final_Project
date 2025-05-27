@@ -78,7 +78,7 @@ header {
   transform: scale(1.05);
 }
 
-/* Modal styless */
+/* Modal styles */
 .modal {
   display: none;
   position: fixed;
@@ -119,6 +119,29 @@ header {
   font-size: 18px;
 }
 
+.modal-buttons {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.modal-buttons button {
+  background-color: #E8E4C9;
+  color: #2C3930;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.modal-buttons button:hover {
+  background-color: #d4cda8;
+  transform: scale(1.05);
+}
+
 footer {
   background-color: #2C3930;
   color: #DCD7C9;
@@ -138,7 +161,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Responsive Styless */
+/* Responsive styles */
 @media (max-width: 768px) {
   .button-container {
     flex-direction: column;
@@ -168,6 +191,12 @@ footer a:hover {
 
   #caption {
     font-size: 16px;
+  }
+
+  .modal-buttons button {
+    font-size: 14px;
+    padding: 8px 16px;
+    margin: 0 5px;
   }
 
   footer {
