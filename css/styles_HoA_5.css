@@ -154,4 +154,22 @@ footer a:hover {
   .back-home-btn button:hover {
     background-color: #2C3930;
   }
+
+#toggle-references-btn {
+  background-color: #444;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  margin: 20px auto;
+  display: block;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#toggle-references-btn:hover {
+  background-color: #222;
+}
+
   
