@@ -3,7 +3,7 @@ function displayImage(category) {
   const modalImg = document.getElementById("modal-img");
   const captionText = document.getElementById("caption");
 
-  // Replace with actual image paths
+  // Replace with actual image pathss
 const images = {
   onsite: [
     "Johari.jpg",
