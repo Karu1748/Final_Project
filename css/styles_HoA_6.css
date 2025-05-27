@@ -284,6 +284,7 @@ footer a:hover {
   display: block;
   transition: background-color 0.3s ease;
 }
+
 #toggle-references-btn:hover {
   background-color: #2C3930;
 }
