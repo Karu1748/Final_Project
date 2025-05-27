@@ -1,3 +1,5 @@
+const blackImageUrl = "images/black.png";
+
 document.addEventListener("DOMContentLoaded", function () {
     // Use a relative path if black.png is in the same folder as the other images
     const blackImageUrl = "images/black.png";
