@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Flowers Escapade</title>
   <link rel="stylesheet" href="css/styles_HoA_6.css"/>
-  <script src="js/search.js"></script>
+  <script src="js/search.js" defer></script>
 </head>
 <body>
 
@@ -43,17 +43,36 @@
 
   <button id="scrollToTopBtn">↑ Top</button>
 
+  <!-- Toggle References Button -->
+  <div class="toggle-references">
+    <button id="toggle-references-btn">Show References</button>
+  </div>
+
   <footer>
-    <h3>References</h3>
-    <div class="references">
-      <div><a href="https://deepgreenpermaculture.com/2024/01/05/the-big-list-of-botanical-plant-names-and-their-meanings-for-gardeners/" target="_blank">Deep Green Permaculture</a></div>
-      <div><a href="https://flowerslib.com/flower-language/" target="_blank">FlowersLib</a></div>
-      <div><a href="https://www.ncertbooks.guru/scientific-name-of-flowers/" target="_blank">NCERT Books</a></div>
-      <div><a href="https://florgeous.com/types-of-flowers/" target="_blank">Florgeous</a></div>
+    <div id="references-section" style="display: none;">
+      <h3>References</h3>
+      <div class="references">
+        <div><a href="https://deepgreenpermaculture.com/2024/01/05/the-big-list-of-botanical-plant-names-and-their-meanings-for-gardeners/" target="_blank">Deep Green Permaculture</a></div>
+        <div><a href="https://flowerslib.com/flower-language/" target="_blank">FlowersLib</a></div>
+        <div><a href="https://www.ncertbooks.guru/scientific-name-of-flowers/" target="_blank">NCERT Books</a></div>
+        <div><a href="https://florgeous.com/types-of-flowers/" target="_blank">Florgeous</a></div>
+      </div>
     </div>
     <div class="copyright">
       All Rights Reserved &copy; 2024
     </div>
   </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle-references-btn');
+    const referencesSection = document.getElementById('references-section');
+
+    toggleBtn.addEventListener('click', () => {
+      const isVisible = referencesSection.style.display === 'block';
+      referencesSection.style.display = isVisible ? 'none' : 'block';
+      toggleBtn.textContent = isVisible ? 'Show References' : 'Hide References';
+    });
+  </script>
+
 </body>
 </html>
