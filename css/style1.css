@@ -277,10 +277,10 @@ footer {
   background-color: #2C3930;
 }
 
-/* Common card style for all sections */
+/* Unified card style for all three sections */
 .expertise, .experience, .projects {
   background: #3F4F44;
-  padding: 20px;
+  padding: 30px;
   margin: 20px auto;
   width: 80%;
   border-radius: 20px;
@@ -292,7 +292,7 @@ footer {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Card hover animation */
+/* Hover animation */
 .expertise:hover,
 .experience:hover,
 .projects:hover {
@@ -313,21 +313,7 @@ footer {
 .experience h3, .projects h3 {
   font-size: 22px;
   color: #DCD7C9;
+  margin-top: 20px;
   margin-bottom: 5px;
 }
 
-/* List styling */
-.expertise ul, .experience ul {
-  list-style: disc;
-  padding-left: 20px;
-}
-
-/* Smooth transition for list items */
-.expertise li, .experience li {
-  margin-bottom: 10px;
-  transition: color 0.3s ease;
-}
-
-.expertise li:hover, .experience li:hover {
-  color: #E8E4C9;
-}
