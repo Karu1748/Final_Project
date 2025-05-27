@@ -59,7 +59,7 @@ td {
 }
 
 .item-toggle:hover {
-    border-color: #5a8224; /* Darker matcha on hover */
+    border-color: #5a8224; 
 }
 
 .item-toggle img {
