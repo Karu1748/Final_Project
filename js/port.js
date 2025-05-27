@@ -15,7 +15,7 @@ const imageMap = {
     { src: "images/100 QA Midterm Reviewer P2.jpg", caption: "100 QA Midterm Reviewer P1" }
   ],
   "Online PT": [
-    { src: "images/onlinept1.jpg", caption: "Online PT - Image 1" }
+    { src: "images/PT_ DARE Event.jpg", caption: "PT_ DARE Event." }
   ]
 };
 
