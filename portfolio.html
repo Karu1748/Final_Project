@@ -25,10 +25,15 @@
     </div>
   </main>
 
+  <!-- Modal Viewer -->
   <div id="image-modal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modal-img">
+    <img class="modal-content" id="modal-img" alt="Category Image">
     <div id="caption"></div>
+    <div class="modal-buttons">
+      <button onclick="prevImage()">Previous</button>
+      <button onclick="nextImage()">Next</button>
+    </div>
   </div>
 
   <footer>
