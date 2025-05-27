@@ -112,6 +112,8 @@ header {
 
 .image-popup-content img {
   max-width: 100%;
+  max-height: 400px;      /* Fixed max height */
+  object-fit: contain;    /* Keep aspect ratio, no distortion */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   user-select: none;
