@@ -1,8 +1,13 @@
+/* Base Reset & Font */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -12,7 +17,7 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  min-height: 100vh;
 }
 
 header {
@@ -34,7 +39,7 @@ header {
 }
 
 main {
-  flex-grow: 1; 
+  flex-grow: 1;
   padding: 20px;
 }
 
@@ -132,18 +137,6 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.about-me {
-  background: #3F4F44;
-  padding: 20px;
-  margin: 20px auto;
-  width: 60%;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  color: #ffffff;
-  font-size: 20px;
-  line-height: 1.6;
-}
-
 .gallery {
   display: flex;
   justify-content: center;
@@ -151,10 +144,9 @@ main {
   padding: 20px;
   border-radius: 15px;
   flex-wrap: wrap;
-  margin-bottom: 20px; 
-  background-color: transparent; 
+  margin-bottom: 20px;
+  background-color: transparent;
 }
-
 
 .image-box {
   overflow: hidden;
@@ -173,6 +165,7 @@ main {
 
 .image-box:hover {
   transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .image-box img:hover {
@@ -180,11 +173,71 @@ main {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
+.back-home-btn {
+  margin-top: 20px;
+}
+
+.back-home-btn button {
+  background-color: #3F4F44;
+  color: #E8E4C9;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-home-btn button:hover {
+  background-color: #2C3930;
+}
+
+/* Shared card style for all sections */
+.about-me, .expertise, .experience, .projects {
+  background: #3F4F44;
+  padding: 20px;
+  margin: 20px auto;
+  width: 60%;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1.6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.about-me:hover, .expertise:hover, .experience:hover, .projects:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Section titles */
+.about-me h2, .expertise h2, .experience h2, .projects h2 {
+  color: #E8E4C9;
+  font-size: 26px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #DCD7C9;
+  padding-bottom: 5px;
+}
+
+/* Subtitles (job roles, project titles) */
+.experience h3, .projects h3 {
+  font-size: 22px;
+  color: #F5F5DC;
+  margin: 15px 0 5px;
+}
+
+/* Paragraphs inside all sections */
+.expertise p, .experience p, .projects p {
+  margin-bottom: 10px;
+}
+
 footer {
   background-color: #2C3930;
   color: #DCD7C9;
   padding: 15px;
-  margin-top: auto; 
+  margin-top: auto;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -195,6 +248,7 @@ footer {
   align-items: center;
 }
 
+/* Responsive Styles */
 @media (max-width: 768px) {
   .title-box {
     font-size: 28px;
@@ -217,8 +271,9 @@ footer {
     padding: 10px;
   }
 
-  .about-me {
+  .about-me, .expertise, .experience, .projects {
     width: 90%;
+    padding: 20px;
     font-size: 18px;
   }
 
@@ -249,7 +304,7 @@ footer {
     font-size: 18px;
   }
 
-  .about-me {
+  .about-me, .expertise, .experience, .projects {
     font-size: 16px;
   }
 
@@ -257,63 +312,3 @@ footer {
     font-size: 24px;
   }
 }
-
-.back-home-btn {
-  margin-top: 20px;
-}
-
-.back-home-btn button {
-  background-color: #3F4F44;
-  color: #E8E4C9;
-  border: none;
-  padding: 12px 24px;
-  font-size: 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.back-home-btn button:hover {
-  background-color: #2C3930;
-}
-
-/* Unified card style for all three sections */
-.expertise, .experience, .projects {
-  background: #3F4F44;
-  padding: 30px;
-  margin: 20px auto;
-  width: 80%;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  color: #ffffff;
-  font-size: 18px;
-  line-height: 1.6;
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover animation */
-.expertise:hover,
-.experience:hover,
-.projects:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.45);
-}
-
-/* Section headers */
-.expertise h2, .experience h2, .projects h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-  color: #E8E4C9;
-  border-bottom: 2px solid #C8C6B8;
-  padding-bottom: 5px;
-}
-
-/* Subheadings inside experience/projects */
-.experience h3, .projects h3 {
-  font-size: 22px;
-  color: #DCD7C9;
-  margin-top: 20px;
-  margin-bottom: 5px;
-}
-
