@@ -17,15 +17,20 @@
 
   <main>
     <div class="button-container">
-      <button onclick="displayImage('Onsite PT')">Onsite PT</button>
-      <button onclick="displayImage('HoA')">HoA</button>
-      <button onclick="displayImage('UO')">UO</button>
-      <button onclick="displayImage('Exam')">Exam</button>
-      <button onclick="displayImage('Online PT')">Online PT</button>
+      <button onclick="displayImage('onsite')">Onsite PT</button>
+      <button onclick="displayImage('hoa')">HoA</button>
+      <button onclick="displayImage('uo')">UO</button>
+      <button onclick="displayImage('exam')">Exam</button>
+      <button onclick="displayImage('online')">Online PT</button>
     </div>
-
-    <div id="image-display" class="image-container"></div>
   </main>
+
+  <!-- Modal for image display -->
+  <div id="image-modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modal-img">
+    <div id="caption"></div>
+  </div>
 
   <footer>
     <div class="copyright">All Rights Reserved &copy; 2024</div>
