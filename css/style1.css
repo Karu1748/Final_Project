@@ -276,3 +276,58 @@ footer {
 .back-home-btn button:hover {
   background-color: #2C3930;
 }
+
+/* Common card style for all sections */
+.expertise, .experience, .projects {
+  background: #3F4F44;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card hover animation */
+.expertise:hover,
+.experience:hover,
+.projects:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.45);
+}
+
+/* Section headers */
+.expertise h2, .experience h2, .projects h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #E8E4C9;
+  border-bottom: 2px solid #C8C6B8;
+  padding-bottom: 5px;
+}
+
+/* Subheadings inside experience/projects */
+.experience h3, .projects h3 {
+  font-size: 22px;
+  color: #DCD7C9;
+  margin-bottom: 5px;
+}
+
+/* List styling */
+.expertise ul, .experience ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+/* Smooth transition for list items */
+.expertise li, .experience li {
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.expertise li:hover, .experience li:hover {
+  color: #E8E4C9;
+}
