@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Set this directly in the script
-    const blackImageUrl = "/static/images/black.png"; 
+    // Use a relative path if black.png is in the same folder as the other images
+    const blackImageUrl = "images/black.png";
 
     const items = document.querySelectorAll(".item");
 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         img.setAttribute("src", blackImageUrl);
         title.style.opacity = 1;
 
-        // Toggle image and textt
+        // Toggle image and text
         img.addEventListener("click", function () {
             const isOriginal = img.getAttribute("data-visible") === "true";
 
