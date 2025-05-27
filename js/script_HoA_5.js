@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         img.setAttribute("src", blackImageUrl);
         title.style.opacity = 1;
 
-        // Toggle image and text
+        // Toggle image and textt
         img.addEventListener("click", function () {
             const isOriginal = img.getAttribute("data-visible") === "true";
 
