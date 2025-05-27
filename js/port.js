@@ -12,7 +12,7 @@ const imageMap = {
   ],
   "Exam": [
     { src: "images/100 QA Midterm Reviewer P1.jpg", caption: "100 QA Midterm Reviewer P1" },
-    { src: "images/100 QA Midterm Reviewer P2.jpg", caption: "100 QA Midterm Reviewer P1" }
+    { src: "images/100 QA Midterm Reviewer P2.jpg", caption: "100 QA Midterm Reviewer P2" }
   ],
   "Online PT": [
     { src: "images/PT_ DARE Event.jpg", caption: "PT_ DARE Event." }
@@ -41,7 +41,7 @@ function displayImage(name) {
 
   const updateSlide = () => {
     img.classList.remove('fade');
-    void img.offsetWidth; // Trigger reflow
+    void img.offsetWidth; // Reflow
     img.src = images[index].src;
     caption.textContent = images[index].caption;
     img.classList.add('fade');
