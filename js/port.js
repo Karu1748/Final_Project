@@ -1,6 +1,7 @@
 let currentCategory = "";
 let currentIndex = 0;
 
+
 const images = {
   onsite: [
     "images/Johari.jpg", "images/PT#1.jpg", "images/PT#2.jpg", "images/PT#3.jpg", "images/PT#4.jpg",
