@@ -1,124 +1,178 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
 body {
   background: url("../images/bg_Portfolio.jpg") no-repeat center center fixed;
   background-size: cover;
-  font-family: sans-serif;
-  color: #333;
+  color: #2C3930;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+}
+
+header {
+  background-color: #2C3930;
+  color: #DCD7C9;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
 }
 
 .title-box {
-  font-size: 2em;
+  display: inline-block;
+  background: #E8E4C9;
+  padding: 8px 20px;
+  color: #2C3930;
   font-weight: bold;
-  text-align: center;
-  margin-top: 20px;
+  border-radius: 10px;
+  font-size: 40px;
 }
 
 .back-home {
-  text-align: center;
-  margin: 15px;
+  margin-top: 10px;
 }
 
 .home-button {
   text-decoration: none;
-  color: white;
-  background-color: #333;
-  padding: 8px 16px;
-  border-radius: 5px;
+  color: #2C3930;
+  background-color: #E8E4C9;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.home-button:hover {
+  background-color: #DCD7C9;
+  transform: scale(1.05);
+}
+
+/* Button Container */
 .button-container {
-  text-align: center;
-  margin: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 30px auto;
+  max-width: 800px;
 }
 
 .button-container button {
-  margin: 5px;
-  padding: 10px 20px;
-  font-size: 14px;
-  cursor: pointer;
+  background-color: #E8E4C9;
+  color: #2C3930;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
   border: none;
-  border-radius: 5px;
-  background-color: #444;
-  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .button-container button:hover {
-  background-color: #666;
+  background-color: #DCD7C9;
+  transform: scale(1.05);
 }
 
-.image-container {
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 20px;
-  max-width: 400px;
-  margin: 30px auto;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
-}
-
-.activity-image {
+/* Modal Popup Styles */
+.image-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 100%;
+  background-color: rgba(44, 57, 48, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.image-popup-content {
+  background-color: #E8E4C9;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  color: #2C3930;
+}
+
+.image-popup-content img {
+  max-width: 100%;
+  border-radius: 10px;
   margin-bottom: 10px;
 }
 
 .image-caption {
-  font-size: 0.95em;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 .slide-btn {
-  margin: 0 10px;
-  padding: 6px 12px;
-  font-size: 14px;
+  background-color: #3F4F44;
+  color: #E8E4C9;
   border: none;
-  background-color: #333;
-  color: white;
-  border-radius: 5px;
+  padding: 8px 16px;
+  margin: 10px 5px 0;
+  border-radius: 8px;
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .slide-btn:hover {
-  background-color: #555;
+  background-color: #5A6A5C;
 }
 
-.fade {
-  animation: fadeIn 0.5s;
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: #2C3930;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
+/* Footer */
 footer {
+  background-color: #2C3930;
+  color: #DCD7C9;
+  padding: 20px;
   text-align: center;
-  margin-top: 40px;
-  color: white;
+  margin-top: auto;
+  font-size: 16px;
 }
 
-
+/* Responsive */
 @media (max-width: 768px) {
   .title-box {
     font-size: 30px;
-    padding: 8px 20px;
+    padding: 6px 15px;
   }
 
   .button-container {
     flex-direction: column;
-    gap: 15px;
+    align-items: center;
   }
 
   .button-container button {
-    font-size: 16px;
-    padding: 10px 20px;
+    width: 80%;
+    margin-bottom: 10px;
   }
 
-  .image-container {
+  .image-popup-content {
+    max-width: 90%;
     padding: 15px;
   }
 }
