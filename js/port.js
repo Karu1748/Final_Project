@@ -1,74 +1,22 @@
-const imageMap = {
-  "Onsite PT": [
-    { src: "images/onsitept1.jpg", caption: "Onsite PT - Image 1" },
-    { src: "images/onsitept2.jpg", caption: "Onsite PT - Image 2" }
-  ],
-  "HoA": [
-    { src: "images/hoa1.jpg", caption: "HoA - Image 1" }
-  ],
-  "UO": [
-    { src: "images/uo1.jpg", caption: "UO - Image 1" },
-    { src: "images/uo2.jpg", caption: "UO - Image 2" }
-  ],
-  "Exam": [
-    { src: "images/100 QA Midterm Reviewer P1.jpg", caption: "100 QA Midterm Reviewer P1" },
-    { src: "images/100 QA Midterm Reviewer P2.jpg", caption: "100 QA Midterm Reviewer P2" }
-  ],
-  "Online PT": [
-    { src: "images/PT_ DARE Event.jpg", caption: "PT_ DARE Event." }
-  ]
-};
+function displayImage(category) {
+  const modal = document.getElementById("image-modal");
+  const modalImg = document.getElementById("modal-img");
+  const captionText = document.getElementById("caption");
 
-function displayImage(name) {
-  const container = document.getElementById('image-display');
-  container.innerHTML = ''; // Clear previous content
-
-  const images = imageMap[name];
-
-  if (!images || images.length === 0) {
-    container.textContent = "No images available.";
-    return;
-  }
-
-  let index = 0;
-
-  const img = document.createElement('img');
-  img.classList.add('activity-image', 'fade');
-  img.loading = 'lazy';
-
-  const caption = document.createElement('p');
-  caption.className = 'image-caption';
-
-  const updateSlide = () => {
-    img.classList.remove('fade');
-    void img.offsetWidth; // Reflow
-    img.src = images[index].src;
-    caption.textContent = images[index].caption;
-    img.classList.add('fade');
+  // Replace with actual image paths
+  const images = {
+    onsite: "images/onsite_pt.jpg",
+    hoa: "images/hoa.jpg",
+    uo: "images/uo.jpg",
+    exam: "images/exam.jpg",
+    online: "images/online_pt.jpg",
   };
 
-  const nextButton = document.createElement('button');
-  nextButton.textContent = "Next";
-  nextButton.className = 'slide-btn';
-  nextButton.onclick = () => {
-    index = (index + 1) % images.length;
-    updateSlide();
-  };
+  modal.style.display = "block";
+  modalImg.src = images[category];
+  captionText.innerHTML = category.replace(/^\w/, c => c.toUpperCase());
+}
 
-  const prevButton = document.createElement('button');
-  prevButton.textContent = "Previous";
-  prevButton.className = 'slide-btn';
-  prevButton.onclick = () => {
-    index = (index - 1 + images.length) % images.length;
-    updateSlide();
-  };
-
-  container.appendChild(img);
-  container.appendChild(caption);
-  if (images.length > 1) {
-    container.appendChild(prevButton);
-    container.appendChild(nextButton);
-  }
-
-  updateSlide();
+function closeModal() {
+  document.getElementById("image-modal").style.display = "none";
 }
