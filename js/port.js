@@ -1,74 +1,87 @@
-const imageMap = {
-  "Onsite PT": [
-    { src: "images/onsitept1.jpg", caption: "Onsite PT - Image 1" },
-    { src: "images/onsitept2.jpg", caption: "Onsite PT - Image 2" }
+let currentCategory = "";
+let currentIndex = 0;
+
+
+const images = {
+  onsite: [
+    "images/Johari.jpg", "images/PT#1.jpg", "images/PT#2.jpg", "images/PT#3.jpg", "images/PT#4.jpg",
+    "images/CU3 Pre-Test.jpg", "images/CU3 Post-Test.jpg", "images/CU4 Pre-Test.jpg", "images/CU4 Post-Test.jpg",
+    "images/W5 D1 PT.jpg", "images/W5 D1 PT 2.jpg", "images/CU5 Pre Test.jpg", "images/CU5 Pre Test 3_13_25.jpg",
+    "images/CU5 Post Test.jpg", "images/CU5 Post Test 3_13_25.jpg", "images/CU6 Pre-Test.jpg", "images/CU6 Post-Test.jpg",
+    "images/W8 D2 Pre Test.jpg", "images/W8 D2 Post Test.jpg", "images/W9 D2 Pre Test.jpg", "images/W9 D2 Post Test.jpg",
+    "images/CU8 Pre-Test.jpg", "images/CU8 Post-Test.jpg", "images/PO CU8.jpg", "images/PR CU8.jpg",
+    "images/PO CU9.jpg", "images/PR CU9.jpg", "images/CU10 Pre-Test Post Test.jpg", "images/CU11 Pre-Test Post Test.jpg",
+    "images/CU12 Pre-Test Post Test.jpg", "images/CU13 Pre-Test.jpg", "images/CU13 Post Test.jpg", "images/W17 PT.jpg",
+    "images/Wireframing.jpg"
   ],
-  "HoA": [
-    { src: "images/hoa1.jpg", caption: "HoA - Image 1" }
+  exam: [
+    "images/Long Test Lecture.jpg", "images/Midterm Lecture.jpg", "images/20 Item Additional.jpg"
   ],
-  "UO": [
-    { src: "images/uo1.jpg", caption: "UO - Image 1" },
-    { src: "images/uo2.jpg", caption: "UO - Image 2" }
+  uo: [
+    "images/UO#1.jpg", "images/UO#2.jpg", "images/UO#3.jpg", "images/UO#4.jpg", "images/UO#5.jpg",
+    "images/UO#6.jpg", "images/UO#7.jpg", "images/UO#8.jpg", "images/UO#9.jpg", "images/UO#10.jpg"
   ],
-  "Exam": [
-    { src: "images/exam1.jpg", caption: "Exam - Image 1" },
-    { src: "images/exam2.jpg", caption: "Exam - Image 2" }
+  hoa: [
+    "images/Pre-HoA#3.jpg", "images/Preliminary_HoA#3.jpeg", "images/Preliminary_HoA#4.jpeg",
+    "images/Preliminary_HoA#5.jpeg", "images/Preliminary_HoA#6.jpeg"
   ],
-  "Online PT": [
-    { src: "images/onlinept1.jpg", caption: "Online PT - Image 1" }
+  online: [
+    "images/PT_ DARE Event.jpeg", "images/PT_ GAD Event.jpeg",
+    "images/PT_ Battle of the Bands Event (14 Feb 2025 at 16_42)(1).jpeg",
+    "images/Student_Profile.png", "images/COR.PNG", "images/COR - Copy.PNG",
+    "images/CU3_Reporting_Rating.png", "images/CU4_Reporting_Rating.png",
+    "images/CU5_Reporting_Rating.png", "images/CU6_Reporting_Rating.png",
+    "images/CU7_Pre-Test.png", "images/CU7_Post-Test.png", "images/CU7_Reporting_Rating.png",
+    "images/CU8_Reporting_Rating.png", "images/CU9_Reporting_Rating.PNG",
+    "images/CU10_Reporting_Rating.png", "images/CU11_Reporting_Rating.png",
+    "images/CU12_Reporting_Rating.png", "images/CU13_Reporting_Rating.png",
+    "images/100 QA Midterm Reviewer P1.jpg", "images/100 QA Midterm Reviewer P2.jpg",
+    "images/Progress_Report.PNG", "images/IRS.jpg", "images/ORM.jpg", "images/GANTT_CHART.jpg"
   ]
 };
 
-function displayImage(name) {
-  const container = document.getElementById('image-display');
-  container.innerHTML = ''; // Clear previous content
+function displayImage(category) {
+  currentCategory = category;
+  currentIndex = 0;
+  showModalImage();
+}
 
-  const images = imageMap[name];
+function showModalImage() {
+  const modal = document.getElementById("image-modal");
+  const modalImg = document.getElementById("modal-img");
+  const captionText = document.getElementById("caption");
 
-  if (!images || images.length === 0) {
-    container.textContent = "No images available.";
+  const categoryImages = images[currentCategory];
+
+  if (!categoryImages || categoryImages.length === 0) {
+    alert("No images available for this category.");
     return;
   }
 
-  let index = 0;
+  modal.style.display = "block";
+  modalImg.src = categoryImages[currentIndex];
+  captionText.innerHTML = `${capitalize(currentCategory)} (${currentIndex + 1} of ${categoryImages.length})`;
+}
 
-  const img = document.createElement('img');
-  img.classList.add('activity-image', 'fade');
-  img.loading = 'lazy';
-
-  const caption = document.createElement('p');
-  caption.className = 'image-caption';
-
-  const updateSlide = () => {
-    img.classList.remove('fade');
-    void img.offsetWidth; // Trigger reflow
-    img.src = images[index].src;
-    caption.textContent = images[index].caption;
-    img.classList.add('fade');
-  };
-
-  const nextButton = document.createElement('button');
-  nextButton.textContent = "Next";
-  nextButton.className = 'slide-btn';
-  nextButton.onclick = () => {
-    index = (index + 1) % images.length;
-    updateSlide();
-  };
-
-  const prevButton = document.createElement('button');
-  prevButton.textContent = "Previous";
-  prevButton.className = 'slide-btn';
-  prevButton.onclick = () => {
-    index = (index - 1 + images.length) % images.length;
-    updateSlide();
-  };
-
-  container.appendChild(img);
-  container.appendChild(caption);
-  if (images.length > 1) {
-    container.appendChild(prevButton);
-    container.appendChild(nextButton);
+function nextImage() {
+  const categoryImages = images[currentCategory];
+  if (currentIndex < categoryImages.length - 1) {
+    currentIndex++;
+    showModalImage();
   }
+}
 
-  updateSlide();
+function prevImage() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    showModalImage();
+  }
+}
+
+function closeModal() {
+  document.getElementById("image-modal").style.display = "none";
+}
+
+function capitalize(text) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
 }

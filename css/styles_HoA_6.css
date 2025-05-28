@@ -4,7 +4,7 @@ body {
     text-align: center;
     background-color: #f5f5f5;
     padding: 20px;
-    background-image: url('/static/images/green_bg.jpg'); 
+    background-image: url('../images/green_bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -271,4 +271,20 @@ footer a:hover {
   .back-home-btn button:hover {
     background-color: #2C3930;
   }
-  
+
+ #toggle-references-btn {
+  background-color: #3F4F44;
+  color: #E8E4C9;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 20px auto;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+#toggle-references-btn:hover {
+  background-color: #2C3930;
+}

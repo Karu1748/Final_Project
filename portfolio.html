@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio</title>
-  <link rel="stylesheet" href="style_port.css">
-  <style>
-        body {
-          background: url("images/bg_portfolio.jpg") no-repeat center center fixed;
-          background-size: cover;
-        }
-  </style>
+  <link rel="stylesheet" href="css/style_port.css" />
 </head>
 <body>
   <header>
@@ -18,27 +12,34 @@
   </header>
 
   <div class="back-home">
-  <a href="home.html" class="home-button">← Back to Home</a>
-</div>
+    <a href="home.html" class="home-button">← Back to Home</a>
+  </div>
 
   <main>
     <div class="button-container">
-      <button onclick="showImage('onsite')">Onsite PT</button>
-      <button onclick="showImage('hoa')">HoA</button>
-      <button onclick="showImage('uo')">UO</button>
-      <button onclick="showImage('exam')">Exam</button>
-      <button onclick="showImage('online')">Online PT</button>
-    </div>
-
-    <div class="image-container">
-      <img id="display-image" src="" alt="Selected Activity">
+      <button onclick="displayImage('onsite')">Onsite PT</button>
+      <button onclick="displayImage('hoa')">HoA</button>
+      <button onclick="displayImage('uo')">UO</button>
+      <button onclick="displayImage('exam')">Exam</button>
+      <button onclick="displayImage('online')">Online PT</button>
     </div>
   </main>
 
+  <!-- Modal Viewer -->
+  <div id="image-modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modal-img" alt="Category Image">
+    <div id="caption"></div>
+    <div class="modal-buttons">
+      <button onclick="prevImage()">Previous</button>
+      <button onclick="nextImage()">Next</button>
+    </div>
+  </div>
+
   <footer>
-      <div class="copyright">All Rights Reserved &copy; 2024</div>
+    <div class="copyright">All Rights Reserved &copy; 2024</div>
   </footer>
 
-  <script src="port.js"></script>
+  <script src="js/port.js"></script>
 </body>
 </html>
