@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const blackImageUrl = "images/black.png"; // Moved here
+    const blackImageUrl = "images/black.png"; // Make sure this path is correct
 
     const items = document.querySelectorAll(".item");
 
@@ -7,63 +7,30 @@ document.addEventListener("DOMContentLoaded", function () {
         const img = item.querySelector("img");
         const title = item.querySelector("p");
 
-        // Save the original source
-        const originalSrc = img.getAttribute("src");
-        img.setAttribute("data-original", originalSrc);
-        img.setAttribute("data-visible", "false");
-
-        // Set to black initially
-        img.setAttribute("src", blackImageUrl);
-        title.style.opacity = 1;
-
-        // Toggle image and text
-        img.addEventListener("click", function () {
-            const isOriginal = img.getAttribute("data-visible") === "true";
-
-            if (isOriginal) {
-                img.setAttribute("src", blackImageUrl);
-                title.style.opacity = 1;
-                img.setAttribute("data-visible", "false");
-            } else {
-                img.setAttribute("src", img.getAttribute("data-original"));
-                title.style.opacity = 0;
-                img.setAttribute("data-visible", "true");
-            }
-        });
-    });
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Use a relative path if black.png is in the same folder as the other images
-    const blackImageUrl = "images/black.png";
-
-    const items = document.querySelectorAll(".item");
-
-    items.forEach(item => {
-        const img = item.querySelector("img");
-        const title = item.querySelector("p");
+        if (!img || !title) return; // Skip if either element is missing
 
         // Save the original source
         const originalSrc = img.getAttribute("src");
         img.setAttribute("data-original", originalSrc);
         img.setAttribute("data-visible", "false");
 
-        // Set to black initially
+        // Set image to black initially and show the text
         img.setAttribute("src", blackImageUrl);
-        title.style.opacity = 1;
+        title.style.opacity = "1";
 
-        // Toggle image and text
+        // Toggle image and text on click
         img.addEventListener("click", function () {
-            const isOriginal = img.getAttribute("data-visible") === "true";
+            const isVisible = img.getAttribute("data-visible") === "true";
 
-            if (isOriginal) {
+            if (isVisible) {
+                // Go back to black image and show the text
                 img.setAttribute("src", blackImageUrl);
-                title.style.opacity = 1;
+                title.style.opacity = "1";
                 img.setAttribute("data-visible", "false");
             } else {
+                // Show the original image and hide the text
                 img.setAttribute("src", img.getAttribute("data-original"));
-                title.style.opacity = 0;
+                title.style.opacity = "0";
                 img.setAttribute("data-visible", "true");
             }
         });
