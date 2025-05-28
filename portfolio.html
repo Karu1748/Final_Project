@@ -17,23 +17,107 @@
 
   <main>
     <div class="button-container">
-      <button onclick="displayImage('onsite')">Onsite PT</button>
-      <button onclick="displayImage('hoa')">HoA</button>
-      <button onclick="displayImage('uo')">UO</button>
-      <button onclick="displayImage('exam')">Exam</button>
-      <button onclick="displayImage('online')">Online PT</button>
+      <button onclick="showCategory('onsite')">Onsite PT</button>
+      <button onclick="showCategory('hoa')">HoA</button>
+      <button onclick="showCategory('uo')">UO</button>
+      <button onclick="showCategory('exam')">Exam</button>
+      <button onclick="showCategory('online')">Online PT</button>
     </div>
+
+    <section id="onsite" class="image-section">
+      <!-- Onsite PT Images -->
+      <img src="images/Johari.jpg" alt="Johari">
+      <img src="images/PT#1.jpg" alt="PT#1">
+      <img src="images/PT#2.jpg" alt="PT#2">
+      <img src="images/PT#3.jpg" alt="PT#3">
+      <img src="images/PT#4.jpg" alt="PT#4">
+      <img src="images/W5_D1_PT.jpg" alt="W5 D1 PT">
+      <img src="images/W5_D1_PT 2.jpg" alt="W5 D1 PT 2">
+      <img src="images/W7_D1_PT.jpg" alt="W7 D1 PT">
+      <img src="images/W17 PT.jpg" alt="W17 PT">
+      <img src="images/W8_D2_Pre-Test.jpg" alt="W8 D2 Pre-Test">
+      <img src="images/W8_D2_Post-Test.jpg" alt="W8 D2 Post-Test">
+      <img src="images/W9_D2_Pre-Test.jpg" alt="W9 D2 Pre-Test">
+      <img src="images/W9_D2_Post-Test.jpg" alt="W9 D2 Post-Test">
+      <img src="images/CU3_Pre-Test.jpg" alt="CU3 Pre-Test">
+      <img src="images/CU3_Post-Test.jpg" alt="CU3 Post-Test">
+      <img src="images/CU4_Pre-Test.jpg" alt="CU4 Pre-Test">
+      <img src="images/CU4_Post-Test.jpg" alt="CU4 Post-Test">
+      <img src="images/CU5_Pre-Test.jpg" alt="CU5 Pre-Test">
+      <img src="images/CU5_Post-Test.jpg" alt="CU5 Post-Test">
+      <img src="images/CU5_Pre_Test 3_13_25.jpg" alt="CU5 Pre-Test 3_13_25">
+      <img src="images/CU5_Post_Test 3_13_25.jpg" alt="CU5 Post-Test 3_13_25">
+      <img src="images/CU6_Pre-Test.jpg" alt="CU6 Pre-Test">
+      <img src="images/CU6_Post-Test.jpg" alt="CU6 Post-Test">
+      <img src="images/CU8_Pre-Test.jpg" alt="CU8 Pre-Test">
+      <img src="images/CU8_Post-Test.jpg" alt="CU8 Post-Test">
+      <img src="images/PO_CU8.jpg" alt="PO CU8">
+      <img src="images/PR_CU8.jpg" alt="PR CU8">
+      <img src="images/PO_CU9.jpg" alt="PO CU9">
+      <img src="images/PR_CU9.jpg" alt="PR CU9">
+      <img src="images/CU10_Pre-Test_Post Test.jpg" alt="CU10 Pre/Post Test">
+      <img src="images/CU11_Pre-Test_Post Test.jpg" alt="CU11 Pre/Post Test">
+      <img src="images/CU12_Pre-Test_Post Test.jpg" alt="CU12 Pre/Post Test">
+      <img src="images/CU13_Pre-Test.jpg" alt="CU13 Pre-Test">
+      <img src="images/CU13_Post Test.jpg" alt="CU13 Post-Test">
+      <img src="images/Wireframing.jpg" alt="Wireframing">
+    </section>
+
+    <section id="hoa" class="image-section" style="display:none;">
+      <!-- HoA Images -->
+      <img src="images/HoA#1.png" alt="HoA 1">
+      <img src="images/HoA#2.png" alt="HoA 2">
+      <img src="images/HoA#3.png" alt="HoA 3">
+      <img src="images/HoA#4.png" alt="HoA 4">
+      <img src="images/HoA#5.png" alt="HoA 5">
+      <img src="images/HoA#6.png" alt="HoA 6">
+      <img src="images/HoA#7.png" alt="HoA 7">
+      <img src="images/HoA#8.png" alt="HoA 8">
+      <img src="images/HoA#9.png" alt="HoA 9">
+      <img src="images/HoA#10.png" alt="HoA 10">
+    </section>
+
+    <section id="uo" class="image-section" style="display:none;">
+      <!-- UO Images -->
+      <img src="images/UO#1.jpg" alt="UO 1">
+      <img src="images/UO#2.jpg" alt="UO 2">
+      <img src="images/UO#3.jpg" alt="UO 3">
+      <img src="images/UO#4.jpg" alt="UO 4">
+      <img src="images/UO#5.jpg" alt="UO 5">
+      <img src="images/UO#6.jpg" alt="UO 6">
+      <img src="images/UO#7.jpg" alt="UO 7">
+      <img src="images/UO#8.jpg" alt="UO 8">
+      <img src="images/UO#9.jpg" alt="UO 9">
+      <img src="images/UO#10.jpg" alt="UO 10">
+    </section>
+
+    <section id="exam" class="image-section" style="display:none;">
+      <!-- Exam Images -->
+      <img src="images/Long_Test_Lecture.jpg" alt="Long Test">
+      <img src="images/Midterm_Lecture.jpg" alt="Midterm">
+      <img src="images/20 _Item_Additional.jpg" alt="20 Item Additional">
+    </section>
+
+    <section id="online" class="image-section" style="display:none;">
+      <!-- Online PT Images -->
+      <img src="images/PT_ DARE_Event.jpeg" alt="DARE Event">
+      <img src="images/PT_ GAD_Event.jpeg" alt="GAD Event">
+      <img src="images/PT_ Battle_of_the_Bands_Event.jpeg" alt="Battle of Bands">
+      <img src="images/Student_Profile.png" alt="Student Profile">
+      <img src="images/COR.PNG" alt="COR">
+      <img src="images/IRS.jpg" alt="IRS">
+      <img src="images/ORM.jpg" alt="ORM">
+      <img src="images/GANTT_CHART.jpg" alt="Gantt Chart">
+      <img src="images/100_QA_Midterm_Reviewer_P1.jpg" alt="QA Reviewer P1">
+      <img src="images/100_QA_Midterm_Reviewer_P2.jpg" alt="QA Reviewer P2">
+      <img src="images/Progress_Report.PNG" alt="Progress Report">
+    </section>
   </main>
 
-  <!-- Modal Viewer -->
   <div id="image-modal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modal-img" alt="Category Image">
+    <img class="modal-content" id="modal-img" alt="Full view">
     <div id="caption"></div>
-    <div class="modal-buttons">
-      <button onclick="prevImage()">Previous</button>
-      <button onclick="nextImage()">Next</button>
-    </div>
   </div>
 
   <footer>
